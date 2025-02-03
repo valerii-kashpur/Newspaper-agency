@@ -1,3 +1,4 @@
+from django.core.validators import RegexValidator, MinLengthValidator
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -10,10 +11,23 @@ class Topic(models.Model):
 
 
 class Redactor(AbstractUser):
+    name_validator = RegexValidator(
+        regex=r'^[A-Za-zА-Яа-яёЁ]+$',
+        message="The name should only contain letters."
+    )
+    min_length_validator = MinLengthValidator(
+        3,
+        message="The name must be at least 3 characters long."
+    )
+
     first_name = models.CharField(max_length=150, blank=False)
     last_name = models.CharField(max_length=150, blank=False)
-    pseudonym = models.CharField(max_length=255, blank=True, null=True,
-                                 unique=True)
+    pseudonym = models.CharField(
+        max_length=255,
+        blank=True,
+        null=True,
+        unique=True
+    )
 
     def __str__(self):
         if self.pseudonym:

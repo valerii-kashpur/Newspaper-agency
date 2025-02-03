@@ -24,8 +24,12 @@ class RedactorAdmin(UserAdmin):
     search_fields = ("username", "first_name", "last_name", "pseudonym")
     ordering = ("username",)
     fieldsets = UserAdmin.fieldsets + ((None, {"fields": ("pseudonym",)}),)
-    add_fieldsets = UserAdmin.add_fieldsets + (
-        (None, {"fields": ("pseudonym",)}),)
+    add_fieldsets = (None, {
+        'classes': ('wide',),
+        'fields': (
+            'username', 'first_name', 'last_name', 'pseudonym', 'password1',
+            'password2'),
+    }),
 
 
 @admin.register(Newspaper)
