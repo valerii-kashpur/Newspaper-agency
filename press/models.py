@@ -12,7 +12,8 @@ class Topic(models.Model):
 class Redactor(AbstractUser):
     first_name = models.CharField(max_length=150, blank=False)
     last_name = models.CharField(max_length=150, blank=False)
-    pseudonym = models.CharField(max_length=255, blank=True, null=True)
+    pseudonym = models.CharField(max_length=255, blank=True, null=True,
+                                 unique=True)
 
     def __str__(self):
         if self.pseudonym:
@@ -21,9 +22,9 @@ class Redactor(AbstractUser):
 
 
 class Newspaper(models.Model):
-    title = models.CharField(max_length=255, required=True)
-    content = models.TextField(required=True)
-    published_date = models.DateField(required=True)
+    title = models.CharField(max_length=255, blank=False, null=False)
+    content = models.TextField(blank=False, null=False)
+    published_date = models.DateField(blank=False, null=False)
     topics = models.ManyToManyField(Topic,
                                     related_name="newspapers")
     publishers = models.ManyToManyField(Redactor, related_name="newspapers")
