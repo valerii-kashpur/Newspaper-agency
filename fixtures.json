@@ -1,0 +1,426 @@
+[
+  {
+    "model": "press.topic",
+    "pk": 1,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 2,
+    "fields": {
+      "name": "Science"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 3,
+    "fields": {
+      "name": "Politics"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 4,
+    "fields": {
+      "name": "Health"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 5,
+    "fields": {
+      "name": "Entertainment"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 6,
+    "fields": {
+      "name": "Sports"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 7,
+    "fields": {
+      "name": "Education"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 8,
+    "fields": {
+      "name": "Finance"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 9,
+    "fields": {
+      "name": "Lifestyle"
+    }
+  },
+  {
+    "model": "press.topic",
+    "pk": 10,
+    "fields": {
+      "name": "Business"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 1,
+    "fields": {
+      "username": "john_doe",
+      "first_name": "John",
+      "last_name": "Doe",
+      "pseudonym": "J.Doe"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 2,
+    "fields": {
+      "username": "anna_smith",
+      "first_name": "Anna",
+      "last_name": "Smith",
+      "pseudonym": "A.Smith"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 3,
+    "fields": {
+      "username": "peter_jones",
+      "first_name": "Peter",
+      "last_name": "Jones",
+      "pseudonym": "P.Jones"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 4,
+    "fields": {
+      "username": "lucy_brown",
+      "first_name": "Lucy",
+      "last_name": "Brown",
+      "pseudonym": null
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 1,
+    "fields": {
+      "title": "Tech News Today",
+      "content": "Latest updates in technology.",
+      "published_date": "2025-02-01",
+      "topics": [
+        1,
+        5
+      ],
+      "publishers": [
+        1,
+        2
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 2,
+    "fields": {
+      "title": "Science Journal",
+      "content": "New discoveries in science.",
+      "published_date": "2025-02-02",
+      "topics": [
+        2,
+        7
+      ],
+      "publishers": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 3,
+    "fields": {
+      "title": "Political Insights",
+      "content": "Politics of the day.",
+      "published_date": "2025-02-03",
+      "topics": [
+        3
+      ],
+      "publishers": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 4,
+    "fields": {
+      "title": "Health News",
+      "content": "The latest trends in health.",
+      "published_date": "2025-02-04",
+      "topics": [
+        4,
+        6
+      ],
+      "publishers": [
+        1,
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 5,
+    "fields": {
+      "title": "Entertainment Weekly",
+      "content": "Movies, TV shows, and more.",
+      "published_date": "2025-02-05",
+      "topics": [
+        5
+      ],
+      "publishers": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 6,
+    "fields": {
+      "title": "Sports Daily",
+      "content": "All about sports news.",
+      "published_date": "2025-02-06",
+      "topics": [
+        6
+      ],
+      "publishers": [
+        1,
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 7,
+    "fields": {
+      "title": "Education Weekly",
+      "content": "Latest updates in education.",
+      "published_date": "2025-02-07",
+      "topics": [
+        7
+      ],
+      "publishers": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 8,
+    "fields": {
+      "title": "Finance Times",
+      "content": "Financial trends and news.",
+      "published_date": "2025-02-08",
+      "topics": [
+        8
+      ],
+      "publishers": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 9,
+    "fields": {
+      "title": "Lifestyle Today",
+      "content": "Trends in lifestyle and culture.",
+      "published_date": "2025-02-09",
+      "topics": [
+        9
+      ],
+      "publishers": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 10,
+    "fields": {
+      "title": "Business Review",
+      "content": "Latest in business and economy.",
+      "published_date": "2025-02-10",
+      "topics": [
+        10
+      ],
+      "publishers": [
+        2,
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 11,
+    "fields": {
+      "title": "Tech Focus",
+      "content": "In-depth analysis of technology.",
+      "published_date": "2025-02-11",
+      "topics": [
+        1,
+        5
+      ],
+      "publishers": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 12,
+    "fields": {
+      "title": "Science Innovations",
+      "content": "Exploring new frontiers in science.",
+      "published_date": "2025-02-12",
+      "topics": [
+        2
+      ],
+      "publishers": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 13,
+    "fields": {
+      "title": "Political Agenda",
+      "content": "Latest in global politics.",
+      "published_date": "2025-02-13",
+      "topics": [
+        3
+      ],
+      "publishers": [
+        1,
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 14,
+    "fields": {
+      "title": "Healthy Living",
+      "content": "Guides to healthier living.",
+      "published_date": "2025-02-14",
+      "topics": [
+        4,
+        6
+      ],
+      "publishers": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 15,
+    "fields": {
+      "title": "Entertainment Buzz",
+      "content": "Everything about the entertainment industry.",
+      "published_date": "2025-02-15",
+      "topics": [
+        5
+      ],
+      "publishers": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 16,
+    "fields": {
+      "title": "Sports Insights",
+      "content": "Breaking sports news.",
+      "published_date": "2025-02-16",
+      "topics": [
+        6
+      ],
+      "publishers": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 17,
+    "fields": {
+      "title": "Education Today",
+      "content": "All things related to education.",
+      "published_date": "2025-02-17",
+      "topics": [
+        7
+      ],
+      "publishers": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 18,
+    "fields": {
+      "title": "Financial Strategies",
+      "content": "Finance and investment tips.",
+      "published_date": "2025-02-18",
+      "topics": [
+        8
+      ],
+      "publishers": [
+        2,
+        3
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 19,
+    "fields": {
+      "title": "Lifestyle Choices",
+      "content": "Exploring lifestyle trends.",
+      "published_date": "2025-02-19",
+      "topics": [
+        9
+      ],
+      "publishers": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 20,
+    "fields": {
+      "title": "Business Insights",
+      "content": "Business news and insights.",
+      "published_date": "2025-02-20",
+      "topics": [
+        10
+      ],
+      "publishers": [
+        1,
+        2
+      ]
+    }
+  }
+]
