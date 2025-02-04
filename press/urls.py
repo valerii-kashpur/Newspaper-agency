@@ -13,7 +13,7 @@ urlpatterns = [
     path("newspaper/", NewspaperListView.as_view(), name="newspaper-list"),
     path("newspaper/create/", NewspaperCreateView.as_view(),
          name="newspaper-create"),
-    path("newspaper/<int:pk>/detail/", NewspaperDetailView.as_view(),
+    path("newspaper/<int:pk>/", NewspaperDetailView.as_view(),
          name="newspaper-detail"),
     path("newspaper/<int:pk>/update/", NewspaperUpdateView.as_view(),
          name="newspaper-update"),

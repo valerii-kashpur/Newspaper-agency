@@ -49,7 +49,7 @@ class TopicCreateView(LoginRequiredMixin, CreateView):
 class TopicUpdateView(LoginRequiredMixin, UpdateView):
     model = Topic
     fields = "__all__"
-    success_url = reverse_lazy("pres:topic-list")
+    success_url = reverse_lazy("press:topic-list")
 
 
 class RedactorListView(LoginRequiredMixin, SearchByMixin, SearchMixin,
@@ -59,7 +59,6 @@ class RedactorListView(LoginRequiredMixin, SearchByMixin, SearchMixin,
     paginate_by = 10
 
     search_form_class = RedactorSearchForm
-    # search_field = "last_name"
     allowed_search_fields = ["first_name", "last_name", "pseudonym"]
 
 
@@ -68,6 +67,11 @@ class RedactorDetailView(LoginRequiredMixin, DetailView):
     queryset = Redactor.objects.prefetch_related(
         "newspapers__topics"
     )
+
+
+class RedactorDeleteView(LoginRequiredMixin, DeleteView):
+    model = Redactor
+    success_url = reverse_lazy("press:redactor-list")
 
 
 class NewspaperListView(LoginRequiredMixin, SearchMixin, ListView):
@@ -81,12 +85,7 @@ class NewspaperListView(LoginRequiredMixin, SearchMixin, ListView):
     def get_queryset(self):
         queryset = super().get_queryset()
         queryset = queryset.prefetch_related("topics", "publishers")
-        return queryset
-
-
-class RedactorDeleteView(LoginRequiredMixin, DeleteView):
-    model = Redactor
-    success_url = reverse_lazy("press:redactor-list")
+        return queryset.order_by("-published_date")
 
 
 class NewspaperDetailView(LoginRequiredMixin, DetailView):

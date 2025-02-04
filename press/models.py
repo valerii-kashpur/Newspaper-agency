@@ -56,3 +56,6 @@ class Newspaper(models.Model):
     def get_publishers_display(self):
         return ", ".join(
             publisher.username for publisher in self.publishers.all())
+
+    class Meta:
+        ordering = ['-published_date']
