@@ -38,7 +38,21 @@ class RedactorCreationForm(UserCreationForm):
 
 
 class RedactorSearchForm(forms.Form):
-    last_name = forms.CharField(max_length=155, required=False)
+    search_by = forms.ChoiceField(
+        choices=[
+            ("first_name", "First Name"),
+            ("last_name", "Last Name"),
+            ("pseudonym", "Pseudonym"),
+        ],
+        required=False,
+        widget=forms.Select(attrs={"class": "form-control"})
+    )
+    search_value = forms.CharField(
+        max_length=155,
+        required=False,
+        widget=forms.TextInput(attrs={"class": "form-control",
+                                      "placeholder": "Enter search query"})
+    )
 
 
 class TagSearchForm(forms.Form):

@@ -13,7 +13,7 @@ from django.views.generic import (
 
 from press.forms import (NewspaperForm, RedactorCreationForm, TagSearchForm,
                          RedactorSearchForm, NewspaperSearchForm)
-from press.mixins import SearchMixin
+from press.mixins import SearchMixin, SearchByMixin
 from press.models import Topic, Redactor, Newspaper
 
 
@@ -52,13 +52,15 @@ class TopicUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy("pres:topic-list")
 
 
-class RedactorListView(LoginRequiredMixin, SearchMixin, ListView):
+class RedactorListView(LoginRequiredMixin, SearchByMixin, SearchMixin,
+                       ListView):
     model = Redactor
     template_name = "press/redactor_list.html"
     paginate_by = 10
 
     search_form_class = RedactorSearchForm
-    search_field = "last_name"
+    # search_field = "last_name"
+    allowed_search_fields = ["first_name", "last_name", "pseudonym"]
 
 
 class RedactorDetailView(LoginRequiredMixin, DetailView):

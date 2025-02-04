@@ -4,9 +4,25 @@
   <h2>Redactors List</h2>
 
   {% if redactor_list %}
-    <form action="" method="get">
-      {{ search_form.as_p }}
-      <input type="submit" value="Search">
+
+    <form action="" method="get" class="d-flex gap-2">
+      <select name="search_by" class="form-control">
+        {% for value, label in search_form.fields.search_by.choices %}
+          <option value="{{ value }}"
+                  {% if search_form.initial.search_by == value %}selected{% endif %}>
+            {{ label }}
+          </option>
+        {% endfor %}
+      </select>
+
+      <input type="text" name="search_value"
+             value="{{ search_form.initial.search_value }}"
+             class="form-control" placeholder="Enter search query">
+
+      <button type="submit" class="btn btn-primary">Search</button>
+
+      <a href="{% url 'press:redactor-list' %}"
+         class="btn btn-secondary">Reset</a>
     </form>
 
     <table class="table">
