@@ -1,0 +1,25 @@
+<ul>
+  {% if user.is_authenticated %}
+    <li>
+      User:
+      <a href="{{ user.get_absolute_url }}">
+        {{ user.get_username }}
+      </a>
+    </li>
+    <li>
+      <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+      </form>
+    </li>
+  {% else %}
+    <li><a href="{% url 'login' %}?next={{ request.path }}">Sign in</a></li>
+    <li>
+      <a href="{% url 'register' %}">Sign up</a>
+    </li>
+  {% endif %}
+  <li><a href="{% url 'press:index' %}">Home</a></li>
+  <li><a href="{% url 'press:newspaper-list' %}">Newspaper</a></li>
+  <li><a href="{% url 'press:redactor-list' %}">Redactors</a></li>
+  <li><a href="{% url 'press:topic-list' %}">Topics</a></li>
+</ul>

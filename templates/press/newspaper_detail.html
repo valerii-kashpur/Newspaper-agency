@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>
+    {{ newspaper.model }}
+    <a href="{% url 'press:newspaper-delete' pk=newspaper.id %}">
+      Delete
+    </a>
+
+    <a href="{% url 'press:newspaper-update' pk=newspaper.id %}"
+       class="btn btn-secondary link-to-page">
+      Update
+    </a>
+  </h2>
+  <p>Topics: ({{ newspaper.get_topics_display }}</p>
+  <p>Publishers: ({{ newspaper.get_publishers_display }}</p>
+  {#  <h3>#}
+  {#    Drivers#}
+  {##}
+  {#    {% if car in user.cars.all %}#}
+  {#      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-danger link-to-page">#}
+  {#        Delete me from this car#}
+  {#      </a>#}
+  {#    {% else %}#}
+  {#      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-success link-to-page">#}
+  {#        Assign me from this car#}
+  {#      </a>#}
+  {#    {% endif %}#}
+  {##}
+  {#  </h3>#}
+{% endblock %}
