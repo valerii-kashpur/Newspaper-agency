@@ -2,8 +2,9 @@
 {#{% load crispy_forms_filters %}#}
 {% block content %}
 
-  <h2>Topics List <a class="btn btn-primary btn-sm"
-                     href="{% url "press:topic-create" %}">Create</a></h2>
+  <h2 class="text-white">Topics List <a class="btn btn-primary btn-sm"
+                                        href="{% url "press:topic-create" %}">Create</a>
+  </h2>
 
   {% if topic_list %}
 
@@ -20,7 +21,7 @@
 
 
 
-    <table class="table table-striped align-middle">
+    <table class="table table-striped align-middle mt-2">
       <thead>
       <tr>
         <th class="ps-3">ID</th>

@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container text-center">
-    <h1 class="mt-5">Welcome to Old Paper</h1>
-    <p class="mt-3 text-muted">
+  <div class="container text-center text-white">
+    <h1 class="mt-5 white">Welcome to Old Paper</h1>
+    <p class="mt-3 text-white">
       "Old Paper" is your gateway to the world of classic journalism.
       Explore a vast collection of newspapers, connect with experienced
       redactors,
@@ -13,25 +13,25 @@
       to discover and contribute to the world of timeless stories.
     </p>
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-center mt-5 text-white">
       <div class="col-md-10">
-        <div class="row text-white">
+        <div class="row">
           <div class="col-md-4">
             <div class="card bg-primary text-center p-4 shadow">
-              <h3 class="fw-bold">{{ num_newspapers }}+</h3>
-              <p>Archived Newspapers</p>
+              <h3 class="fw-bold text-white">{{ num_newspapers }}+</h3>
+              <p class="text-white">Archived Newspapers</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card bg-success text-center p-4 shadow">
-              <h3 class="fw-bold">{{ num_redactors }}+</h3>
-              <p>Expert Redactors</p>
+              <h3 class="fw-bold text-white">{{ num_redactors }}+</h3>
+              <p class="text-white">Expert Redactors</p>
             </div>
           </div>
           <div class="col-md-4">
             <div class="card bg-warning text-center p-4 shadow">
-              <h3 class="fw-bold">{{ num_topics }}+</h3>
-              <p>Historical Topics</p>
+              <h3 class="fw-bold text-white">{{ num_topics }}+</h3>
+              <p class="text-white">Historical Topics</p>
             </div>
           </div>
         </div>

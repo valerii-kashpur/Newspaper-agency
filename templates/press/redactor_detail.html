@@ -21,7 +21,8 @@
     </div>
 
     <div class="mt-5">
-      <h4><i class="bi bi-newspaper"></i> Newspapers</h4>
+      <h4 class="text-white"><i class="bi bi-newspaper text-white"></i>
+        Newspapers</h4>
       <div class="row">
         {% for newspaper in redactor.newspapers.all %}
           <div class="col-md-4 mb-4">
@@ -34,7 +35,7 @@
             </div>
           </div>
         {% empty %}
-          <p class="text-muted"><i class="bi bi-exclamation-circle"></i> No
+          <p class="text-white"><i class="bi bi-exclamation-circle"></i> No
             Newspapers!</p>
         {% endfor %}
       </div>

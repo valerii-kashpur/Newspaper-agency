@@ -2,7 +2,7 @@
 {% load crispy_forms_filters %}
 {% block content %}
 
-  <h2 class="mb-4">
+  <h2 class="mb-4 text-white">
     Newspaper List
     <a
         href="{% url 'press:newspaper-create' %}"
@@ -12,13 +12,13 @@
   </h2>
 
   {% if newspaper_list %}
-
-    <form action="" method="get" class="d-flex gap-2">
-      <input type="text" name="title" class="form-control"
-             placeholder="Search topic">
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-
+    <div>
+      <form action="" method="get" class="d-flex gap-2">
+        <input type="text" name="title" class="form-control"
+               placeholder="Search topic">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
     <div class="container mt-4">
       <div class="row">
         {% for newspaper in newspaper_list %}
