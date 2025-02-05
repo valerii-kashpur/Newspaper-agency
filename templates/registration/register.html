@@ -2,18 +2,22 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container d-flex justify-content-center mt-5 mb-5">
-    <div class="w-50 p-4 border rounded bg-light shadow">
-      <h2 class="text-center">Registration</h2>
-      <form method="post" class="d-flex flex-column align-items-center"
-            style="max-width: 400px; margin: 0 auto;" novalidate>
+
+  <div class="container d-flex justify-content-center align-items-center"
+       style="min-height: 80vh;">
+    <div class="p-4 border rounded bg-light shadow d-flex flex-column"
+         style="width: 100%; max-width: 360px; max-height: 75vh; overflow-y: auto;">
+      <h2 class="text-center mb-3">Registration</h2>
+      <form method="post" class="d-flex flex-column" novalidate>
         {% csrf_token %}
         {{ form|crispy }}
-        <button type="submit" class="btn btn-primary w-auto">Create account
+        <button type="submit" class="btn btn-primary w-100 mt-2">Create
+          account
         </button>
       </form>
-      <p class="text-center">Already have an account?
-        <a href="{% url 'login' %}">Sign in</a></p>
+      <p class="text-center mt-3">Already have an account? <a
+          href="{% url 'login' %}">Sign in</a></p>
     </div>
   </div>
+
 {% endblock %}
