@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <div class="container bg-white mt-5">
-    <div class="row">
 
-      <div class="col-md-8">
+  <div class="container bg-white mt-5 pe-0 rounded">
+    <div class="row align-items-stretch g-0">
+      <div class="col-md-8 pr-0">
         <h2 class="mb-3">
           {{ newspaper.title }}
           <a href="{% url 'press:newspaper-delete' pk=newspaper.id %}"
@@ -16,14 +16,16 @@
         <p><strong>Topics:</strong> {{ newspaper.get_topics_display }}</p>
         <p><strong>Publishers:</strong> {{ newspaper.get_publishers_display }}
         </p>
-        <p class="mt-3">{{ newspaper.content }}</p>
+        <p class="mt-3 text-wrap">{{ newspaper.content }}</p>
       </div>
 
-      <div class="col-md-4 d-flex align-items-center">
-        <img src="/static/images/newspaper.jpg"
-             class="img-fluid rounded shadow" alt="Newspaper Image">
+      <div class="col-md-4 d-flex flex-column h-100">
+        <!-- Растягиваем колонку -->
+        <img src="/static/images/paper.jpg"
+             class="img-fluid w-100 h-100 object-fit-cover"
+             alt="Newspaper Image">
       </div>
+
     </div>
   </div>
-
 {% endblock %}

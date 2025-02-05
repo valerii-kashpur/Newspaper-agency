@@ -2,25 +2,32 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container mt-4">
-    <div class="card shadow-lg p-4" style="max-width: 700px;">
-      <div class="row g-0 align-items-center">
 
-        <div class="col-md-6 p-3">
+  <div class="container mt-4 mb-4">
+    <div class="card shadow-lg p-4">
+      <div class="row g-0 align-items-stretch">
+
+        <div class="col-md-6 p-3 d-flex flex-column">
           <h2 class="mb-3">{{ object|yesno:"Update,Create" }} Newspaper</h2>
-          <form action="" method="post" novalidate>
+          <form action="" method="post" novalidate
+                class="flex-grow-1 d-flex flex-column">
             {% csrf_token %}
             {{ form|crispy }}
-            <button type="submit" class="btn btn-primary w-100">Submit</button>
+            <button type="submit" class="btn btn-primary w-100 mt-auto">
+              Submit
+            </button>
           </form>
         </div>
 
-        <div class="col-md-6 d-flex justify-content-center">
-          <img src="https://source.unsplash.com/300x300/?newspaper"
-               alt="Newspaper Image" class="img-fluid rounded">
+        <div class="col-md-6">
+          <img src="/static/images/create-paper.jpg"
+               alt="Newspaper Image"
+               class="img-fluid w-100 h-100 object-fit-cover rounded">
         </div>
+
       </div>
     </div>
   </div>
+
 
 {% endblock %}

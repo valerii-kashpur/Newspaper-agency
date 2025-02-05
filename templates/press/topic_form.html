@@ -2,25 +2,31 @@
 {% load crispy_forms_filters %}
 
 {% block content %}
-  <div class="container mt-4">
-    <div class="card shadow-lg p-4" style="max-width: 700px;">
+
+  <div class="container d-flex justify-content-center align-items-center"
+       style="min-height: 80vh;">
+    <div class="card shadow-lg p-4" style="max-width: 900px; width: 100%;">
       <div class="row g-0 align-items-center">
 
-        <div class="col-md-6 p-3">
-          <h1 class="mb-3">{{ object|yesno:"Update,Create" }} Topic</h1>
+        <div class="col-md-6 p-4">
+          <h1 class="mb-3 text-center">{{ object|yesno:"Update,Create" }}
+            Topic</h1>
           <form action="" method="post" novalidate>
             {% csrf_token %}
             {{ form|crispy }}
             <button type="submit" class="btn btn-primary w-100">Submit</button>
           </form>
         </div>
-      
-        <div class="col-md-6 d-flex justify-content-center">
-          <img src="https://source.unsplash.com/300x300/?news"
-               alt="Topic Image" class="img-fluid rounded">
+
+        <div class="col-md-6 d-flex justify-content-center align-items-center">
+          <img src="/static/images/topics.jpg"
+               alt="Topic Image"
+               class="img-fluid rounded h-100 object-fit-cover">
         </div>
+
       </div>
     </div>
   </div>
+
 
 {% endblock %}
