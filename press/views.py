@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import Count
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
@@ -38,6 +39,11 @@ class TopicListView(LoginRequiredMixin, SearchMixin, ListView):
 
     search_form_class = TagSearchForm
     search_field = "name"
+
+    def get_queryset(self):
+        return (super()
+                .get_queryset()
+                .annotate(newspaper_count=Count("newspapers")))
 
 
 class TopicCreateView(LoginRequiredMixin, CreateView):
