@@ -22,7 +22,7 @@ class SearchMixin:
         context = super().get_context_data(**kwargs)
 
         search_by = self.request.GET.get("search_by",
-                                         "last_name")  # По умолчанию "last_name"
+                                         "last_name")
         search_value = self.request.GET.get("search_value", "")
 
         if self.search_form_class:

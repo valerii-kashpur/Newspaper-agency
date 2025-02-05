@@ -5,7 +5,7 @@ from press.forms import (
     NewspaperSearchForm,
     RedactorCreationForm,
     RedactorSearchForm,
-    TagSearchForm,
+    TopicSearchForm,
 )
 from press.models import Topic
 
@@ -79,7 +79,8 @@ class RedactorSearchFormTest(TestCase):
 
     def test_widgets(self):
         form = RedactorSearchForm()
-        self.assertEqual(form.fields["search_by"].widget.attrs["class"], "form-control")
+        self.assertEqual(form.fields["search_by"].widget.attrs["class"],
+                         "form-control")
         self.assertEqual(
             form.fields["search_value"].widget.attrs["class"], "form-control"
         )
@@ -87,9 +88,9 @@ class RedactorSearchFormTest(TestCase):
 
 class TagSearchFormTest(TestCase):
     def test_valid_form(self):
-        form = TagSearchForm(data={"name": "Politics"})
+        form = TopicSearchForm(data={"name": "Politics"})
         self.assertTrue(form.is_valid())
 
     def test_empty_form_is_valid(self):
-        form = TagSearchForm(data={})
+        form = TopicSearchForm(data={})
         self.assertTrue(form.is_valid())

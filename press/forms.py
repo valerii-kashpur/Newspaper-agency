@@ -55,5 +55,5 @@ class RedactorSearchForm(forms.Form):
     )
 
 
-class TagSearchForm(forms.Form):
+class TopicSearchForm(forms.Form):
     name = forms.CharField(max_length=155, required=False)

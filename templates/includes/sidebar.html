@@ -1,25 +1,82 @@
-<ul>
-  {% if user.is_authenticated %}
-    <li>
-      User:
-      <a href="{{ user.get_absolute_url }}">
-        {{ user.get_username }}
+{#<li class="nav-item">#}
+{#  <a class="nav-link {% if request.path == '/' %}active{% endif %}" href="/">Home</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#  <a class="nav-link {% if request.path == '/newspaper/' %}active{% endif %}" href="{% url 'newspaper-list' %}">Newspaper</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#  <a class="nav-link {% if request.path == '/redactors/' %}active{% endif %}" href="{% url 'redactor-list' %}">Redactors</a>#}
+{#</li>#}
+{#<li class="nav-item">#}
+{#  <a class="nav-link {% if request.path == '/topics/' %}active{% endif %}" href="{% url 'topic-list' %}">Topics</a>#}
+{#</li>#}
+
+<header>
+  <nav class="navbar navbar-expand navbar-dark bg-dark"
+       aria-label="Second navbar example">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <i class="bi bi-newspaper me-2"></i> Old Paper
       </a>
-    </li>
-    <li>
-      <form action="{% url 'logout' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Logout</button>
-      </form>
-    </li>
-  {% else %}
-    <li><a href="{% url 'login' %}?next={{ request.path }}">Sign in</a></li>
-    <li>
-      <a href="{% url 'register' %}">Sign up</a>
-    </li>
-  {% endif %}
-  <li><a href="{% url 'press:index' %}">Home</a></li>
-  <li><a href="{% url 'press:newspaper-list' %}">Newspaper</a></li>
-  <li><a href="{% url 'press:redactor-list' %}">Redactors</a></li>
-  <li><a href="{% url 'press:topic-list' %}">Topics</a></li>
-</ul>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarsExample02"
+              aria-controls="navbarsExample02" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+               aria-current="page"
+               href="{% url 'press:index' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'newspaper-list' %}active{% endif %}"
+               aria-current="page"
+               href="{% url 'press:newspaper-list' %}">Newspaper</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'redactor-list' %}active{% endif %}"
+               aria-current="page"
+               href="{% url 'press:redactor-list' %}">Redactors</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.resolver_match.url_name == 'topic-list' %}active{% endif %}"
+               aria-current="page"
+               href="{% url 'press:topic-list' %}">Topics</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto">
+          {% if user.is_authenticated %}
+            <li class="nav-item d-flex align-items-center">
+              <span class="navbar-text me-2">User:</span>
+              <a class="nav-link active"
+                 href="{{ user.get_absolute_url }}">{{ user.get_username }}</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <form action="{% url 'logout' %}" method="post" class="d-flex">
+                {% csrf_token %}
+                <button class="btn btn-link nav-link p-0 text-decoration-none"
+                        type="submit">
+                  Logout
+                </button>
+              </form>
+            </li>
+          {% else %}
+            <li class="nav-item">
+              <a class="nav-link active"
+                 href="{% url 'login' %}?next={{ request.path }}">Sign in</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'register' %}">Sign
+                up</a>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+

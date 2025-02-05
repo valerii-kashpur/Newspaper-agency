@@ -12,7 +12,7 @@ from django.views.generic import (
     DeleteView
 )
 
-from press.forms import (NewspaperForm, RedactorCreationForm, TagSearchForm,
+from press.forms import (NewspaperForm, RedactorCreationForm, TopicSearchForm,
                          RedactorSearchForm, NewspaperSearchForm)
 from press.mixins import SearchMixin, SearchByMixin
 from press.models import Topic, Redactor, Newspaper
@@ -37,13 +37,12 @@ class TopicListView(LoginRequiredMixin, SearchMixin, ListView):
     template_name = "press/topic_list.html"
     paginate_by = 10
 
-    search_form_class = TagSearchForm
+    search_form_class = TopicSearchForm
     search_field = "name"
 
-    def get_queryset(self):
-        return (super()
-                .get_queryset()
-                .annotate(newspaper_count=Count("newspapers")))
+    # def get_queryset(self):
+    #     queryset = super().get_queryset()
+    #     return queryset.annotate(newspaper_count=Count("newspapers"))
 
 
 class TopicCreateView(LoginRequiredMixin, CreateView):
@@ -83,7 +82,7 @@ class RedactorDeleteView(LoginRequiredMixin, DeleteView):
 class NewspaperListView(LoginRequiredMixin, SearchMixin, ListView):
     model = Newspaper
     template_name = "press/newspaper_list.html"
-    paginate_by = 10
+    paginate_by = 6
 
     search_form_class = NewspaperSearchForm
     search_field = "title"

@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+{% load crispy_forms_filters %}
 
 {% block content %}
-  <h2>Registration</h2>
-  <form method="post">
+  <h2 class="text-center">Registration</h2>
+  <form method="post" class="d-flex flex-column align-items-center"
+        style="max-width: 400px; margin: 0 auto;" novalidate>
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Create account</button>
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary w-auto">Create account
+    </button>
   </form>
-  <p>Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+  <p class="text-center">Already have an account?
+    <a href="{% url 'login' %}">Sign in</a></p>
 {% endblock %}

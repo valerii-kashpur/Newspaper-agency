@@ -1,31 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h2>
-    {{ newspaper.title }}
-    <a href="{% url 'press:newspaper-delete' pk=newspaper.id %}">
-      Delete
-    </a>
+  <div class="container mt-5">
+    <div class="row">
 
-    <a href="{% url 'press:newspaper-update' pk=newspaper.id %}"
-       class="btn btn-secondary link-to-page">
-      Update
-    </a>
-  </h2>
-  <p>Topics: ({{ newspaper.get_topics_display }}</p>
-  <p>Publishers: ({{ newspaper.get_publishers_display }}</p>
-  {#  <h3>#}
-  {#    Drivers#}
-  {##}
-  {#    {% if car in user.cars.all %}#}
-  {#      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-danger link-to-page">#}
-  {#        Delete me from this car#}
-  {#      </a>#}
-  {#    {% else %}#}
-  {#      <a href="{% url 'taxi:toggle-car-assign' pk=car.id %}" class="btn btn-success link-to-page">#}
-  {#        Assign me from this car#}
-  {#      </a>#}
-  {#    {% endif %}#}
-  {##}
-  {#  </h3>#}
+      <div class="col-md-8">
+        <h2 class="mb-3">
+          {{ newspaper.title }}
+          <a href="{% url 'press:newspaper-delete' pk=newspaper.id %}"
+             class="btn btn-danger btn-sm">Delete</a>
+          <a href="{% url 'press:newspaper-update' pk=newspaper.id %}"
+             class="btn btn-secondary btn-sm">Update</a>
+        </h2>
+
+        <p><strong>Topics:</strong> {{ newspaper.get_topics_display }}</p>
+        <p><strong>Publishers:</strong> {{ newspaper.get_publishers_display }}
+        </p>
+        <p class="mt-3">{{ newspaper.content }}</p>
+      </div>
+
+      <div class="col-md-4 d-flex align-items-center">
+        <img src="/static/images/newspaper.jpg"
+             class="img-fluid rounded shadow" alt="Newspaper Image">
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

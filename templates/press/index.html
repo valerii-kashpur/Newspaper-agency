@@ -1,11 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Welcome page</h1>
+  <div class="container text-center">
+    <h1 class="mt-5">Welcome to Old Paper</h1>
+    <p class="mt-3 text-muted">
+      "Old Paper" is your gateway to the world of classic journalism.
+      Explore a vast collection of newspapers, connect with experienced
+      redactors,
+      and dive into various topics that shaped history.
+      Whether you're a reader, writer, or historian, Old Paper offers a unique
+      experience
+      to discover and contribute to the world of timeless stories.
+    </p>
 
-  <ul>
-    <li><strong>Newspapers:</strong> {{ num_newspapers }}</li>
-    <li><strong>Redactors:</strong> {{ num_redactors }}</li>
-    <li><strong>Topics:</strong> {{ num_topics }}</li>
-  </ul>
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-10">
+        <div class="row text-white">
+          <div class="col-md-4">
+            <div class="card bg-primary text-center p-4 shadow">
+              <h3 class="fw-bold">{{ num_newspapers }}+</h3>
+              <p>Archived Newspapers</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-success text-center p-4 shadow">
+              <h3 class="fw-bold">{{ num_redactors }}+</h3>
+              <p>Expert Redactors</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card bg-warning text-center p-4 shadow">
+              <h3 class="fw-bold">{{ num_topics }}+</h3>
+              <p>Historical Topics</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
 {% endblock %}

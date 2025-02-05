@@ -25,22 +25,22 @@
          class="btn btn-secondary">Reset</a>
     </form>
 
-    <table class="table">
+    <table class="table table-striped">
       <tr>
-        <th>ID</th>
+        <th class="ps-3">ID</th>
         <th>Username</th>
         <th>First name</th>
         <th>Last name</th>
-        <th>Pseudonym</th>
+        <th class="text-center">Pseudonym</th>
       </tr>
       {% for redactor in redactor_list %}
         <tr>
-          <td>{{ redactor.id }}</td>
+          <td class="ps-3">{{ redactor.id }}</td>
           <td><a href="{{ redactor.get_absolute_url }}">{{ redactor.username }}
             {% if user == redactor %} (Me){% endif %}</a></td>
           <td>{{ redactor.first_name }}</td>
           <td>{{ redactor.last_name }}</td>
-          <td>{{ redactor.pseudonym }}</td>
+          <td class="text-center">{{ redactor.pseudonym }}</td>
         </tr>
       {% endfor %}
 
