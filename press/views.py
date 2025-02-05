@@ -14,7 +14,7 @@ from django.views.generic import (
 
 from press.forms import (NewspaperForm, RedactorCreationForm, TopicSearchForm,
                          RedactorSearchForm, NewspaperSearchForm)
-from press.mixins import SearchMixin, SearchByMixin
+from press.mixins import SearchMixin
 from press.models import Topic, Redactor, Newspaper
 
 
@@ -40,9 +40,9 @@ class TopicListView(LoginRequiredMixin, SearchMixin, ListView):
     search_form_class = TopicSearchForm
     search_field = "name"
 
-    # def get_queryset(self):
-    #     queryset = super().get_queryset()
-    #     return queryset.annotate(newspaper_count=Count("newspapers"))
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.annotate(newspaper_count=Count("newspapers"))
 
 
 class TopicCreateView(LoginRequiredMixin, CreateView):
@@ -57,7 +57,7 @@ class TopicUpdateView(LoginRequiredMixin, UpdateView):
     success_url = reverse_lazy("press:topic-list")
 
 
-class RedactorListView(LoginRequiredMixin, SearchByMixin, SearchMixin,
+class RedactorListView(LoginRequiredMixin, SearchMixin,
                        ListView):
     model = Redactor
     template_name = "press/redactor_list.html"

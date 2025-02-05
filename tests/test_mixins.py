@@ -1,90 +1,59 @@
 from django.test import TestCase, RequestFactory
-from django import forms
 from django.views.generic import ListView
+from django.db import models
+from django import forms
+from django.db.models import Count
 
-from press.models import Newspaper
-from press.views import SearchMixin, SearchByMixin
-
-
-class DummySearchForm(forms.Form):
-    search_by = forms.CharField(required=False)
-    search_value = forms.CharField(required=False)
+from press.mixins import SearchMixin
+from press.models import Topic
 
 
-class DummySearchView(SearchMixin, SearchByMixin, ListView):
-    model = Newspaper
-    search_form_class = DummySearchForm
-    search_field = "title"
-    allowed_search_fields = ["title", "content"]
-    template_name = "dummy.html"
+class TopicSearchForm(forms.Form):
+    name = forms.CharField(max_length=255, required=False)
+
+
+class TopicListView(SearchMixin, ListView):
+    model = Topic
+    search_form_class = TopicSearchForm
+    search_field = "name"
 
     def get_queryset(self):
-        qs = super().get_queryset()
-        return qs
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+        return super().get_queryset().annotate(
+            newspaper_count=Count("newspapers"))
 
 
-class SearchMixinTests(TestCase):
+class SearchMixinTest(TestCase):
     def setUp(self):
         self.factory = RequestFactory()
-        self.n1 = Newspaper.objects.create(
-            title="Breaking News",
-            content="Content A",
-            published_date="2025-02-04"
-        )
-        self.n2 = Newspaper.objects.create(
-            title="Daily Update",
-            content="Content B",
-            published_date="2025-02-05"
-        )
-        self.n3 = Newspaper.objects.create(
-            title="Weather Report",
-            content="Content C",
-            published_date="2025-02-06"
-        )
 
-    def _get_view(self, request):
-        view = DummySearchView()
+        Topic.objects.create(name="Politics")
+        Topic.objects.create(name="Sports")
+        Topic.objects.create(name="Technology")
+
+    def test_search_by_name(self):
+        request = self.factory.get("/", {"name": "Sports"})
+        view = TopicListView()
         view.request = request
-        view.args = ()
-        view.kwargs = {}
+        queryset = view.get_queryset()
+
+        self.assertEqual(queryset.count(), 1)
+        self.assertEqual(queryset.first().name, "Sports")
+
+    def test_search_no_results(self):
+        request = self.factory.get("/", {"name": "Health"})
+        view = TopicListView()
+        view.request = request
+        queryset = view.get_queryset()
+
+        self.assertEqual(queryset.count(), 0)
+
+    def test_context_data(self):
+        request = self.factory.get("/", {"name": "Politics"})
+
+        view = TopicListView()
+        view.request = request
         view.object_list = view.get_queryset()
-        return view
 
-    def test_get_queryset_no_search(self):
-        request = self.factory.get("/dummy/")
-        view = self._get_view(request)
-        qs = view.get_queryset()
-        self.assertEqual(qs.count(), 3)
-
-    def test_get_queryset_with_search(self):
-        request = self.factory.get("/dummy/", {"search_value": "daily"})
-        view = self._get_view(request)
-        qs = view.get_queryset()
-        self.assertEqual(qs.count(), 1)
-        self.assertEqual(qs.first(), self.n2)
-
-    def test_get_context_data(self):
-        request = self.factory.get("/dummy/", {"search_by": "content",
-                                               "search_value": "Content B"})
-        view = self._get_view(request)
         context = view.get_context_data()
-        self.assertIn("search_form", context)
-        form = context["search_form"]
-        self.assertEqual(form.initial.get("search_by"), "content")
-        self.assertEqual(form.initial.get("search_value"), "Content B")
 
-    def test_get_search_field_allowed(self):
-        request = self.factory.get("/dummy/", {"search_by": "content"})
-        view = self._get_view(request)
-        search_field = view.get_search_field()
-        self.assertEqual(search_field, "content")
-
-    def test_get_search_field_not_allowed(self):
-        request = self.factory.get("/dummy/", {"search_by": "nonexistent"})
-        view = self._get_view(request)
-        search_field = view.get_search_field()
-        self.assertEqual(search_field, "title")
+        self.assertEqual(context["search_form"].initial["name"], "Politics")

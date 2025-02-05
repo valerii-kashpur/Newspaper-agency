@@ -13,9 +13,10 @@
 
   {% if newspaper_list %}
 
-    <form action="" method="get">
-      {{ search_form|crispy }}
-      <input type="submit" value="Search">
+    <form action="" method="get" class="d-flex gap-2">
+      <input type="text" name="title" class="form-control"
+             placeholder="Search topic">
+      <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
     <div class="container mt-4">

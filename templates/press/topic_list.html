@@ -7,10 +7,18 @@
 
   {% if topic_list %}
 
-    <form action="" method="get">
-      {{ search_form.as_p }}
-      <input type="submit" value="Search">
+    <form action="" method="get" class="d-flex gap-2">
+      <input type="text" name="name"
+             value="{{ search_form.initial.name }}"
+             class="form-control" placeholder="Enter topic name">
+
+      <button type="submit" class="btn btn-primary">Search</button>
+
+      <a href="{% url 'press:topic-list' %}"
+         class="btn btn-secondary">Reset</a>
     </form>
+
+
 
     <table class="table table-striped align-middle">
       <thead>
