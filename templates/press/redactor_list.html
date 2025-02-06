@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <h2 class="text-white">Redactors List</h2>
+
+  {% if redactor_list %}
+    <div class="w-50">
+      <form action="" method="get" class="d-flex gap-2">
+        <select name="search_by" class="form-control">
+          {% for value, label in search_form.fields.search_by.choices %}
+            <option value="{{ value }}"
+                    {% if search_form.initial.search_by == value %}selected{% endif %}>
+              {{ label }}
+            </option>
+          {% endfor %}
+        </select>
+
+        <input type="text" name="search_value"
+               value="{{ search_form.initial.search_value }}"
+               class="form-control" placeholder="Enter search query">
+
+        <button type="submit" class="btn btn-primary">Search</button>
+
+        <a href="{% url 'press:redactor-list' %}"
+           class="btn btn-secondary">Reset</a>
+      </form>
+    </div>
+    <table class="table table-striped mt-2">
+      <tr>
+        <th class="ps-3">ID</th>
+        <th>Username</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th class="text-center">Pseudonym</th>
+      </tr>
+      {% for redactor in redactor_list %}
+        <tr>
+          <td class="ps-3">{{ redactor.id }}</td>
+          <td><a href="{{ redactor.get_absolute_url }}">{{ redactor.username }}
+            {% if user == redactor %} (Me){% endif %}</a></td>
+          <td>{{ redactor.first_name }}</td>
+          <td>{{ redactor.last_name }}</td>
+          <td class="text-center">{{ redactor.pseudonym }}</td>
+        </tr>
+      {% endfor %}
+
+    </table>
+  {% else %}
+    <p>There are no redactors in the service.</p>
+  {% endif %}
+
+{% endblock %}

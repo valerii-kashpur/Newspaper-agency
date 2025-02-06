@@ -1,0 +1,38 @@
+body {
+    background: rgba(0, 0, 0, 0.3) url("./images/hero.jpg") no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    background-blend-mode: darken;
+}
+
+.welcome-section {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 5rem;
+}
+
+.welcome-section h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.welcome-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.stats-list {
+    list-style: none;
+    padding: 0;
+}
+
+.stats-list li {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stats-list strong {
+    color: #007bff;
+}

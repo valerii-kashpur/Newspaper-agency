@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <div class="container text-center text-white">
+    <h1 class="mt-5">Welcome to Old Paper</h1>
+    <p class="mt-3">
+      "Old Paper" is your gateway to the world of classic journalism.
+      Explore a vast collection of newspapers, connect with experienced
+      redactors, and dive into various topics that shaped history.
+      Whether you're a reader, writer, or historian, Old Paper offers
+      a unique experience to discover and contribute to the world of
+      timeless stories.
+    </p>
+
+    <div class="row justify-content-center mt-5">
+      <div class="col-md-10">
+        <div class="row g-4">
+
+          <div class="col-md-4">
+            <div class="card text-center p-4 shadow"
+                 style="background-color: #2E2E2E;">
+              <div class="card-body">
+                <i class="bi bi-newspaper text-light fs-1"></i>
+                <h3 class="fw-bold text-light mt-2">{{ num_newspapers }}+</h3>
+                <p class="text-light mb-0">Archived Newspapers</p>
+                <small class="text-white-50">Explore our vast newspaper
+                  archive</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card text-center p-4 shadow"
+                 style="background-color: #3B3B3B;">
+              <div class="card-body">
+                <i class="bi bi-pencil-square text-light fs-1"></i>
+                <h3 class="fw-bold text-light mt-2">{{ num_redactors }}+</h3>
+                <p class="text-light mb-0">Expert Redactors</p>
+                <small class="text-white-50">Connect with experienced
+                  editors</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card text-center p-4 shadow"
+                 style="background-color: #4A4A4A;">
+              <div class="card-body">
+                <i class="bi bi-bookmarks text-light fs-1"></i>
+                <h3 class="fw-bold text-light mt-2">{{ num_topics }}+</h3>
+                <p class="text-light mb-0">Topics</p>
+                <small class="text-white-50">Discover interesting
+                  topics</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+{% endblock %}

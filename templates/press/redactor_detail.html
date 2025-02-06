@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+      <h2 class="mb-3">
+        <i class="bi bi-person-circle"></i> Username: {{ redactor.username }}
+        <a href="{% url 'press:redactor-delete' pk=redactor.id %}"
+           class="btn btn-danger btn-sm">Delete</a>
+      </h2>
+
+      <p><strong><i class="bi bi-person-fill"></i> First
+        name:</strong> {{ redactor.first_name }}</p>
+      <p><strong><i class="bi bi-person-lines-fill"></i> Last
+        name:</strong> {{ redactor.last_name }}</p>
+      <p><strong><i class="bi bi-card-checklist"></i> License
+        number:</strong> {{ redactor.pseudonym }}</p>
+      <p><strong><i class="bi bi-check-circle-fill"></i> Is
+        staff:</strong> {{ redactor.is_staff }}</p>
+    </div>
+
+    <div class="mt-5">
+      <h4 class="text-white"><i class="bi bi-newspaper text-white"></i>
+        Newspapers</h4>
+      <div class="row">
+        {% for newspaper in redactor.newspapers.all %}
+          <div class="col-md-4 mb-4">
+            <div class="card p-3 shadow-sm">
+              <h5><i class="bi bi-book"></i> {{ newspaper.title }}</h5>
+              <p><strong><i class="bi bi-tags-fill"></i>
+                Topics:</strong> {{ newspaper.get_topics_display }}</p>
+              <p><strong><i class="bi bi-hash"></i>
+                Id:</strong> {{ newspaper.id }}</p>
+            </div>
+          </div>
+        {% empty %}
+          <p class="text-white"><i class="bi bi-exclamation-circle"></i> No
+            Newspapers!</p>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
