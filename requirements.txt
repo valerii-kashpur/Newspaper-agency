@@ -6,10 +6,12 @@ crispy-bootstrap5==2024.10
 Django==5.1.6
 django-crispy-forms==2.3
 django-debug-toolbar==5.0.1
+Faker==35.2.0
 mypy-extensions==1.0.0
 packaging==24.2
 pathspec==0.12.1
 platformdirs==4.3.6
+psycopg2-binary==2.9.10
 python-dateutil==2.9.0.post0
 python-dotenv==1.0.1
 six==1.17.0
