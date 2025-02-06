@@ -6,10 +6,8 @@ crispy-bootstrap5==2024.10
 Django==5.1.6
 django-crispy-forms==2.3
 django-debug-toolbar==5.0.1
-factory_boy==3.3.3
 Faker==35.2.0
 gunicorn==23.0.0
-h11==0.14.0
 mypy-extensions==1.0.0
 packaging==24.2
 pathspec==0.12.1
@@ -21,5 +19,4 @@ six==1.17.0
 sqlparse==0.5.3
 typing_extensions==4.12.2
 tzdata==2025.1
-uvicorn==0.34.0
 whitenoise==6.8.2
