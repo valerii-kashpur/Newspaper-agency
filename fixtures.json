@@ -422,5 +422,598 @@
         2
       ]
     }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 5,
+    "fields": {
+      "username": "michael_clark",
+      "first_name": "Michael",
+      "last_name": "Clark",
+      "pseudonym": "M.Clark"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 6,
+    "fields": {
+      "username": "sarah_wilson",
+      "first_name": "Sarah",
+      "last_name": "Wilson",
+      "pseudonym": "S.Wilson"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 7,
+    "fields": {
+      "username": "david_miller",
+      "first_name": "David",
+      "last_name": "Miller",
+      "pseudonym": "D.Miller"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 8,
+    "fields": {
+      "username": "emily_johnson",
+      "first_name": "Emily",
+      "last_name": "Johnson",
+      "pseudonym": null
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 9,
+    "fields": {
+      "username": "andrew_brown",
+      "first_name": "Andrew",
+      "last_name": "Brown",
+      "pseudonym": "A.Brown"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 10,
+    "fields": {
+      "username": "lisa_taylor",
+      "first_name": "Lisa",
+      "last_name": "Taylor",
+      "pseudonym": "L.Taylor"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 11,
+    "fields": {
+      "username": "mark_anderson",
+      "first_name": "Mark",
+      "last_name": "Anderson",
+      "pseudonym": "M.Anderson"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 12,
+    "fields": {
+      "username": "jessica_thomas",
+      "first_name": "Jessica",
+      "last_name": "Thomas",
+      "pseudonym": "J.Thomas"
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 13,
+    "fields": {
+      "username": "chris_parker",
+      "first_name": "Chris",
+      "last_name": "Parker",
+      "pseudonym": null
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 14,
+    "fields": {
+      "username": "nina_harris",
+      "first_name": "Nina",
+      "last_name": "Harris",
+      "pseudonym": "N.Harris"
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 21,
+    "fields": {
+      "title": "Tech Trends",
+      "content": "Latest trends in technology.",
+      "published_date": "2025-02-21",
+      "topics": [
+        1,
+        5
+      ],
+      "publishers": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 22,
+    "fields": {
+      "title": "Science Breakthroughs",
+      "content": "New breakthroughs in science.",
+      "published_date": "2025-02-22",
+      "topics": [
+        2
+      ],
+      "publishers": [
+        7
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 23,
+    "fields": {
+      "title": "Political Analysis",
+      "content": "In-depth political analysis.",
+      "published_date": "2025-02-23",
+      "topics": [
+        3
+      ],
+      "publishers": [
+        8,
+        9
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 24,
+    "fields": {
+      "title": "Health Tips",
+      "content": "Tips for a healthier lifestyle.",
+      "published_date": "2025-02-24",
+      "topics": [
+        4
+      ],
+      "publishers": [
+        10
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 25,
+    "fields": {
+      "title": "Entertainment News",
+      "content": "Latest entertainment news.",
+      "published_date": "2025-02-25",
+      "topics": [
+        5
+      ],
+      "publishers": [
+        11,
+        12
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 26,
+    "fields": {
+      "title": "Sports Highlights",
+      "content": "Top sports highlights.",
+      "published_date": "2025-02-26",
+      "topics": [
+        6
+      ],
+      "publishers": [
+        13
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 27,
+    "fields": {
+      "title": "Education Updates",
+      "content": "Updates in education.",
+      "published_date": "2025-02-27",
+      "topics": [
+        7
+      ],
+      "publishers": [
+        14
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 28,
+    "fields": {
+      "title": "Finance Insights",
+      "content": "Insights into finance.",
+      "published_date": "2025-02-28",
+      "topics": [
+        8
+      ],
+      "publishers": [
+        5,
+        10
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 29,
+    "fields": {
+      "title": "Lifestyle Guide",
+      "content": "Guide to a better lifestyle.",
+      "published_date": "2025-03-01",
+      "topics": [
+        9
+      ],
+      "publishers": [
+        6,
+        11
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 30,
+    "fields": {
+      "title": "Business Growth",
+      "content": "Strategies for business growth.",
+      "published_date": "2025-03-02",
+      "topics": [
+        10
+      ],
+      "publishers": [
+        7,
+        12
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 31,
+    "fields": {
+      "title": "Tech Innovations",
+      "content": "Innovations in technology.",
+      "published_date": "2025-03-03",
+      "topics": [
+        1,
+        5
+      ],
+      "publishers": [
+        8,
+        13
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 32,
+    "fields": {
+      "title": "Scientific Discoveries",
+      "content": "Recent scientific discoveries.",
+      "published_date": "2025-03-04",
+      "topics": [
+        2
+      ],
+      "publishers": [
+        9,
+        14
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 33,
+    "fields": {
+      "title": "Political Events",
+      "content": "Key political events.",
+      "published_date": "2025-03-05",
+      "topics": [
+        3
+      ],
+      "publishers": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 34,
+    "fields": {
+      "title": "Healthy Living",
+      "content": "Living a healthy life.",
+      "published_date": "2025-03-06",
+      "topics": [
+        4
+      ],
+      "publishers": [
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 35,
+    "fields": {
+      "title": "Entertainment Spotlight",
+      "content": "Spotlight on entertainment.",
+      "published_date": "2025-03-07",
+      "topics": [
+        5
+      ],
+      "publishers": [
+        7,
+        11
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 36,
+    "fields": {
+      "title": "Sports Champions",
+      "content": "Champions in sports.",
+      "published_date": "2025-03-08",
+      "topics": [
+        6
+      ],
+      "publishers": [
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 37,
+    "fields": {
+      "title": "Educational Resources",
+      "content": "Resources for education.",
+      "published_date": "2025-03-09",
+      "topics": [
+        7
+      ],
+      "publishers": [
+        9,
+        13
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 38,
+    "fields": {
+      "title": "Financial Planning",
+      "content": "Planning your finances.",
+      "published_date": "2025-03-10",
+      "topics": [
+        8
+      ],
+      "publishers": [
+        10,
+        14
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 39,
+    "fields": {
+      "title": "Lifestyle Choices",
+      "content": "Making lifestyle choices.",
+      "published_date": "2025-03-11",
+      "topics": [
+        9
+      ],
+      "publishers": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 40,
+    "fields": {
+      "title": "Business Strategies",
+      "content": "Effective business strategies.",
+      "published_date": "2025-03-12",
+      "topics": [
+        10
+      ],
+      "publishers": [
+        6,
+        11
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 41,
+    "fields": {
+      "title": "Tech Reviews",
+      "content": "Reviews of the latest tech.",
+      "published_date": "2025-03-13",
+      "topics": [
+        1,
+        5
+      ],
+      "publishers": [
+        7,
+        12
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 42,
+    "fields": {
+      "title": "Science Explained",
+      "content": "Explaining complex science.",
+      "published_date": "2025-03-14",
+      "topics": [
+        2
+      ],
+      "publishers": [
+        8,
+        13
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 43,
+    "fields": {
+      "title": "Political Debates",
+      "content": "Debates in politics.",
+      "published_date": "2025-03-15",
+      "topics": [
+        3
+      ],
+      "publishers": [
+        9,
+        14
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 44,
+    "fields": {
+      "title": "Health and Wellness",
+      "content": "Wellness tips and advice.",
+      "published_date": "2025-03-16",
+      "topics": [
+        4
+      ],
+      "publishers": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 45,
+    "fields": {
+      "title": "Entertainment World",
+      "content": "World of entertainment.",
+      "published_date": "2025-03-17",
+      "topics": [
+        5
+      ],
+      "publishers": [
+        6,
+        10
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 46,
+    "fields": {
+      "title": "Sports Legends",
+      "content": "Legends in sports.",
+      "published_date": "2025-03-18",
+      "topics": [
+        6
+      ],
+      "publishers": [
+        7,
+        11
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 47,
+    "fields": {
+      "title": "Education Reform",
+      "content": "Reforming education systems.",
+      "published_date": "2025-03-19",
+      "topics": [
+        7
+      ],
+      "publishers": [
+        8,
+        12
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 48,
+    "fields": {
+      "title": "Financial Markets",
+      "content": "Analysis of financial markets.",
+      "published_date": "2025-03-20",
+      "topics": [
+        8
+      ],
+      "publishers": [
+        9,
+        13
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 49,
+    "fields": {
+      "title": "Lifestyle Changes",
+      "content": "Adapting to lifestyle changes.",
+      "published_date": "2025-03-21",
+      "topics": [
+        9
+      ],
+      "publishers": [
+        10,
+        14
+      ]
+    }
+  },
+  {
+    "model": "press.newspaper",
+    "pk": 50,
+    "fields": {
+      "title": "Business Success",
+      "content": "Keys to business success.",
+      "published_date": "2025-03-22",
+      "topics": [
+        10
+      ],
+      "publishers": [
+        5,
+        6
+      ]
+    }
+  },
+  {
+    "model": "press.redactor",
+    "pk": 15,
+    "fields": {
+      "password": "pbkdf2_sha256$870000$anFKq0pO1ikYcXp0g23hUn$w6Po9PFgUqnel6nScW+HlFLNy5izrA/mSweDND+V/RU=",
+      "last_login": "2025-03-01T12:00:00Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "Admin",
+      "last_name": "User",
+      "email": "admin@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-03-01T12:00:00Z",
+      "pseudonym": "Admin"
+    }
   }
 ]
